@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home(props) {
+  console.log(props)
   return (
     <div className={styles.container}>
       <Head>
@@ -36,5 +37,5 @@ export default function Home(props) {
 export async function getServerSideProps({req}) {
   const subdomain = req.headers.host.split('.')[0];
   console.log(subdomain)
-  return {props: { langkey: subdomain }};
+  return {props: { subdomain: subdomain }};
 }
