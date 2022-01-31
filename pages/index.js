@@ -37,5 +37,9 @@ export default function Home(props) {
 export async function getServerSideProps({req}) {
   const subdomain = req.headers.host.split('.')[0];
   console.log(subdomain)
+  /** 
+   * Faire la requete API correspondant au sous-domaine puis renvoyer le  
+   * résultat pour l'utiliser coté client
+   * */ 
   return {props: { subdomain: subdomain }};
 }
